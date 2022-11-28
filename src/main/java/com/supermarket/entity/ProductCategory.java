@@ -26,12 +26,6 @@ public class ProductCategory implements Serializable {
     private Date updatedAt;
     @Column(name = "category")
     private String category;
-    @Column(name = "description")
-    private String description;
-    @Column(name = "image_path")
-    private String imagePath;
-    @Column(name = "personal_or_professional")
-    private Long personalOrProfessional;
     @JoinColumn(name = "status_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Status statusId;

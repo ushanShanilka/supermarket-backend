@@ -1,10 +1,10 @@
 package com.supermarket.entity;
 
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,8 +12,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name = "shopping_bag_has_product_has_product_size")
-public class ShoppingBagHasProductHasProductSize implements Serializable {
+@Entity(name = "shopping_bag_has_product")
+public class ShoppingBagHasProduct implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,11 +27,9 @@ public class ShoppingBagHasProductHasProductSize implements Serializable {
     private Date updatedAt;
     @Column(name = "quantity")
     private Short quantity;
-    @Column(name = "discounted_unit_price")
-    private Double discountedUnitPrice;
-    @JoinColumn(name = "product_has_product_size_id", referencedColumnName = "id")
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private ProductHasProductSize productHasProductSizeId;
+    private Product productId;
     @JoinColumn(name = "shopping_bag_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private ShoppingBag shoppingBagId;

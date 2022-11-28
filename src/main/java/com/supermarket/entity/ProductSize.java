@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -27,11 +26,7 @@ public class ProductSize implements Serializable {
     private Date updatedAt;
     @Column(name = "size")
     private String size;
-    @Column(name = "weight")
-    private Integer weight;
     @JoinColumn(name = "status_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Status statusId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productSizeId")
-    private Collection<ProductHasProductSize> productHasProductSizeCollection;
 }

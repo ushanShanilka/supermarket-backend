@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -36,7 +35,4 @@ public class ShoppingBag implements Serializable {
     @JoinColumn(name = "shopping_bag_status_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private ShoppingBagStatus shoppingBagStatusId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "shoppingBagId")
-    private Collection<ShoppingBagHasProductHasProductSize> shoppingBagHasProductHasProductSizeCollection;
-
 }

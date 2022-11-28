@@ -30,12 +30,12 @@ public class Product implements Serializable {
     @Lob
     @Column(name = "descriptions")
     private String descriptions;
-    @Column(name = "video_url")
-    private String videoUrl;
     @Column(name = "rating")
     private Double rating;
     @Column(name = "rating_count")
     private Long ratingCount;
+    @Column(name = "price")
+    private Double price;
     @JoinColumn(name = "product_category_id", referencedColumnName = "id")
     @ManyToOne(optional = true)
     private ProductCategory productCategoryId;

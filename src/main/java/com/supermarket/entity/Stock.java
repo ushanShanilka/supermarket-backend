@@ -28,14 +28,7 @@ public class Stock implements Serializable {
     private Date updatedAt;
     @Column(name = "quantity")
     private Integer quantity;
-    @JoinColumn(name = "product_has_product_size_id", referencedColumnName = "id")
-    @OneToOne(optional = false)
-    private ProductHasProductSize productHasProductSizeId;
     @JoinColumn(name = "status_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Status statusId;
-    @JoinColumn(name = "admin_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Admin adminId;
-
 }
